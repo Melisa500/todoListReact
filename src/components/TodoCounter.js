@@ -1,0 +1,31 @@
+import '../style/TodoCounter.css';
+
+function TodoCounter({ total, completed }){
+
+    //En una constante
+
+    /*   const estilos = {
+        backgroundColor: 'red',
+        color: 'white',
+        fontSize: '60px', 
+    } 
+    Se coloca asi en la etiqueta <h1 style={estilos}></h1>
+    */
+
+    //En línea
+
+/*     <h1 style={{
+        fontSize: '24px',
+        textAlign: 'center',
+        margin: 0,
+        padding: '48px',
+    }}> */
+
+    return(
+        <h1>
+            You have completed {completed} of {total} TODOS
+        </h1>
+    );
+}
+
+export { TodoCounter };

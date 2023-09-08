@@ -1,0 +1,9 @@
+ul{
+    background-color: #BFE2FF;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 0 1rem 2rem;
+    list-style: none;
+    border-radius: 3rem 0;
+    border: solid 3px #BFE2FF;
+}

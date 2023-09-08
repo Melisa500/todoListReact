@@ -1,0 +1,42 @@
+
+.div__button{
+    background-color: #93B535;
+    width: 30rem;
+    padding: 1.5rem;
+    position: absolute;
+    left: 0;
+    border-radius: 0 0 40px 40px;
+    margin-top: 2rem;
+}
+
+button{
+    background-color: #93B535;
+    position: absolute;
+    top: -2rem;
+    left: 1rem;
+    right: 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 5rem;
+    padding: 0;
+    margin: auto;
+    border-radius: 5rem;
+    border-style: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:active{
+        transform: translateY(4px);
+        background-color: #BFE2FF;
+    }
+}
+
+button p{
+    position: absolute;
+    top: -2.2rem;
+    left: 0.9rem;
+    right: 0.9rem;
+    margin: auto;
+}
