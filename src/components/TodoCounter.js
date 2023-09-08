@@ -23,7 +23,7 @@ function TodoCounter({ total, completed }){
 
     return(
         <h1>
-            You have completed {completed} of {total} TODOS
+            You have completed <span>{completed}</span>  of <span>{total} </span> TODOS
         </h1>
     );
 }

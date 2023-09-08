@@ -5,4 +5,13 @@ input{
     height: 2rem;
     width: 20rem;
     border-radius: 1rem;
+
+    &::placeholder{
+        color: #ee8b84;
+        font-weight: bold;
+    }
+
+    &:focus{
+        outline-color: #BFE2FF;
+    }
 }
