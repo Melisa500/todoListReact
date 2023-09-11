@@ -1,8 +1,21 @@
+import React from 'react';
 import '../style/TodoSearch.css';
 
-function TodoSearch() {
+function TodoSearch({
+    searchValue, //estas son las props
+    setSearchValue, //props
+}) {
+
+
     return(
-            <input placeholder="Search" />
+            <input
+                placeholder="Search" 
+                value={searchValue}
+                onChange={(event) => {
+                    setSearchValue(event.target.value);
+                }}
+
+            />
     );
 }
 

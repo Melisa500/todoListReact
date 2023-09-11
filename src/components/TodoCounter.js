@@ -21,6 +21,10 @@ function TodoCounter({ total, completed }){
         padding: '48px',
     }}> */
 
+    if(completed === total){
+        return(<h1>You completed all the TO DO!</h1>)
+    }
+
     return(
         <h1>
             You have completed <span>{completed}</span>  of <span>{total} </span> TODOS
