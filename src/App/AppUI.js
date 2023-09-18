@@ -8,6 +8,8 @@ import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError'; 
 import { EmptyTodos } from '../EmptyTodos'; 
 import { CreateTodoButton } from '../CreateTodoButton/index';
+import { Modal } from '../Modal';
+import '../Modal/Modal.css'
 import { TodoContext } from '../TodoContext';
 
 function AppUI(){
@@ -17,6 +19,8 @@ function AppUI(){
         searchedTodos,
         completeTodoFunction,
         deleteTodoFunction,
+        openModal,
+        setOpenModal,
     } = React.useContext(TodoContext)
 
     return (
@@ -40,19 +44,19 @@ function AppUI(){
                 ))}
             </TodoList>
             <CreateTodoButton/>
+
+            {openModal && (
+                <Modal>
+                    <label htmlFor='todo'>Add to do</label>
+                    <input className='input__modal' tipe='text' id='todo' name='todos' placeholder='Write here'/>
+                    <div className='div__buttom'>
+                        <buttom className='buttom__modal'>CLEAR</buttom>
+                        <buttom className='buttom__modal'>SUMMIT</buttom>
+                    </div>
+                </Modal>
+            )}
         </main>
     );
 }
 
 export { AppUI };
-
-/*             
---- todoCounter-----
-completed={completedTodos} 
-            total={totalTodos} 
-            
-       -------todoSearch--------
-                   searchValue={searchValue} //el primero es una props searchValue que tiene como valor la variable del useState {searchValue}
-            setSearchValue={setSearchValue} //idem que el anterior
-            /     
-            */
