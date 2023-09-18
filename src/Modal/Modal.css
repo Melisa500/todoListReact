@@ -11,7 +11,8 @@
     position: absolute;
     top: 3rem;
     right: 0rem;
-    left: 0rem
+    left: 0rem;
+    z-index: 1;
 }
 
 label {
@@ -69,5 +70,17 @@ label {
 
     &:active{
         transform: translateY(4px);
+    }
+}
+
+.buttom__close{
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 1rem 0.5rem 0 27rem;
+
+    &:active{
+        background-color: #ee8b84;
     }
 }

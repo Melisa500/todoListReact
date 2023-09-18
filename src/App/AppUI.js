@@ -43,10 +43,20 @@ function AppUI(){
                     />
                 ))}
             </TodoList>
-            <CreateTodoButton/>
+            <CreateTodoButton
+                setOpenModal={setOpenModal}
+            />
 
             {openModal && (
                 <Modal>
+                    <button 
+                        className='buttom__close'
+                        onClick={() =>{
+                            setOpenModal(state => !state);
+                        }}
+                    >
+                        x
+                    </button>
                     <label htmlFor='todo'>Add to do</label>
                     <input className='input__modal' tipe='text' id='todo' name='todos' placeholder='Write here'/>
                     <div className='div__buttom'>
