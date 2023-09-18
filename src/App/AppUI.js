@@ -49,7 +49,7 @@ function AppUI(){
 
             {openModal && (
                 <Modal>
-                    <button 
+{/*                     <button 
                         className='buttom__close'
                         onClick={() =>{
                             setOpenModal(state => !state);
@@ -62,7 +62,7 @@ function AppUI(){
                     <div className='div__buttom'>
                         <buttom className='buttom__modal'>CLEAR</buttom>
                         <buttom className='buttom__modal'>SUMMIT</buttom>
-                    </div>
+                    </div> */}
                 </Modal>
             )}
         </main>
