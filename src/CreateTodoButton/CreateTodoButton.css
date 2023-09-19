@@ -10,22 +10,13 @@
 }
 
 button{
-    background-color: #93B535;
-    position: absolute;
-    top: -2rem;
-    left: 1rem;
-    right: 1rem;
-    width: 4.5rem;
-    height: 4.5rem;
+    background-color: #93B535; 
     color: white;
     font-weight: bold;
-    font-size: 5rem;
-    padding: 0;
-    margin: auto;
-    border-radius: 5rem;
     border-style: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    border-radius: 5rem;
 
     &:hover{
         background-color: #c4e270;
@@ -35,6 +26,18 @@ button{
         transform: translateY(4px);
         background-color: #BFE2FF;
     }
+}
+
+.create__button {
+    position: absolute;
+    top: -2rem;
+    left: 1rem;
+    right: 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 5rem;
+    padding: 0;
+    margin: auto;
 }
 
 button p{

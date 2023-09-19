@@ -4,6 +4,7 @@ function CreateTodoButton( {setOpenModal}) {
     return(
         <div className='div__button'>     
             <button
+                className='create__button'
                 onClick={
                     () =>{
                         setOpenModal(state => !state);
