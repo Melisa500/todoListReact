@@ -17,23 +17,41 @@
 
 label {
     display: block;
-    background-color: #f5f5f5e8;
     margin: auto;
-    padding: 0.8rem;
     text-align: center;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: rgb(80, 82, 81);
+    background-color:#eef5fa;
     border-radius: 1rem 0;
-    font-weight: bold;
+    width: 13rem;
 }
 
-.input__modal{
+
+.alert--active{
+    color: white;
+    background-color: red;
+    font-size: 0.2rem;
+    margin:0.5rem auto;
+    font-weight: bold;
+    width: 10rem;
+    text-align: center;
+}
+
+.textarea__modal{
     display: block;
     min-width: 25rem;
     height: 6rem;
-    margin: 1rem auto;
+    margin: 0.5rem auto 1rem;
     padding: 0.6rem;
     border-style: hidden;
     font-size: 1.1rem;
     font-weight: 300;
+    resize: none;
+
+    &:focus{
+        outline-color: #BFE2FF;
+    }
 }
 
 .modal__div__button__container {
@@ -72,7 +90,15 @@ label {
     }
 }
 
-.button__close{
+.clean {
+    background-color: rgb(151, 30, 30);
+
+    &:hover{
+        background-color: rgb(245, 155, 155);
+    }
+}
+
+.button__close {
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.5rem;

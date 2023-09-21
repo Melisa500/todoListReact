@@ -26,24 +26,43 @@ function TodoProvider({ children }){
         return todoText.includes(searchText);
         }
     );
+
+    const isAlreadyAdded = (text) => {
+        const searchText = text.toLowerCase();
+        return todos.filter(
+            (todo) => {
+            const todoText = todo.text.toLowerCase();
+            return todoText === searchText;
+            }
+        ).length !== 0 
+    };
+
+    const addTodo = (text) => {
+            const newTodos = [...todos];
+            newTodos.push({
+                text,
+                completed: false,
+            });
+            saveTodos(newTodos);
+    }
     
-        const completeTodoFunction = (text) => {
-        const newTodos = [...todos];
-        const todoIndex = newTodos.findIndex(
-            (todo) => todo.text === text
-        );
-        newTodos[todoIndex].completed =  !newTodos[todoIndex].completed ;
-        saveTodos(newTodos);
-        }
+    const completeTodoFunction = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+        (todo) => todo.text === text
+    );
+    newTodos[todoIndex].completed =  !newTodos[todoIndex].completed ;
+    saveTodos(newTodos);
+    }
     
-        const deleteTodoFunction = (text) => {
-        const newTodos = [...todos];
-        const todoIndex = newTodos.findIndex(
-            (todo) => todo.text === text
-        );
-        newTodos.splice(todoIndex, 1) ;
-        saveTodos(newTodos);
-        };
+    const deleteTodoFunction = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+        (todo) => todo.text === text
+    );
+    newTodos.splice(todoIndex, 1) ;
+    saveTodos(newTodos);
+    };
     
     return (
         <TodoContext.Provider value={{
@@ -54,6 +73,8 @@ function TodoProvider({ children }){
                 searchValue,
                 setSearchValue,
                 searchedTodos,
+                addTodo,
+                isAlreadyAdded,
                 completeTodoFunction,
                 deleteTodoFunction,
                 openModal,

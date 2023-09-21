@@ -1,26 +1,74 @@
 import React from "react";
-//import ReactDOM from 'react-dom';
+import { TodoContext } from "../TodoContext";
 import './TodoForm.css'
 
 function TodoForm() {
+    const {
+        addTodo,
+        isAlreadyAdded,
+        setOpenModal,
+    } = React.useContext(TodoContext);
+
+    const [newTodoValue, setNewTodoValue] = React.useState('');
+    const [repeatedElement, setRepeatedElement] = React.useState(null);
+
+    //repeated element
+
+    const onSubmit = (e)=>{
+        e.preventDefault();
+        if (newTodoValue === ""){
+            console.log("borrar");
+            return;
+        }
+
+        const isAlreadyAdd = isAlreadyAdded(newTodoValue);
+        if (isAlreadyAdd){
+            const alert = <p className="alert--active">Ya existe este item</p>
+            setRepeatedElement(alert);
+            return;
+        }
+        
+        addTodo(newTodoValue);
+        setOpenModal(false);
+    }
+    
+    const onReset = (e)=>{
+        e.preventDefault();
+        setNewTodoValue("");
+    }
+
+    const onChange = (e)=>{
+        setNewTodoValue(e.target.value);
+    }
+
+    const onClose = (e)=> {
+        e.preventDefault();
+        setOpenModal(false);
+    }
+
     return(
-        <form onSubmit={(e)=>{
-            e.preventDefault();
-        }}>
+        <form onSubmit={onSubmit}>
             <button 
                 className='button__close'
-                onClick={({setOpenModal}) =>{
-                    setOpenModal(state => !state);
-                }}
+                onClick={onClose}
             >
             x 
             </button>
-            <label htmlFor='todo'>Add to do</label>
-            <input className='input__modal' tipe='text' id='todo' name='todos' placeholder='Write here'/>
+            <label htmlFor='newAddTodo'>ADD TO DO</label>
+            {repeatedElement}
+            <textarea
+                className='textarea__modal' 
+                id='newAddTodo' 
+                name='newAddTodo' 
+                placeholder='Write here'
+                value={newTodoValue}
+                onChange={onChange}
+            />
             <div className='modal__div__button__container'>
                 <button 
-                    type=""
-                    className='modal__div__button'
+                    type="reset"
+                    className='modal__div__button clean'
+                    onClick={onReset}
                 >CLEAN</button>
                 <button 
                     type="submit"
