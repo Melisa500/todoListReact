@@ -11,10 +11,9 @@
 }
 
 .TodoItem__p{
-    margin-left: 3.3rem;
     width: calc(100% - 120px);
-    text-align: left;
-    line-height: 1rem;
+    text-align: justify;
+    line-height: 1.1rem;
     font-weight: 400;
     align-self: center;
 }
