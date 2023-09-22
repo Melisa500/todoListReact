@@ -4,8 +4,9 @@ import './Modal.css'
 
 
 function Modal({ children, setOpenModal }) {
+
     return ReactDOM.createPortal(
-        <div className="Modal">
+        <div className={'Modal Modal--active' }>
             {children}
         </div>,
         document.getElementById('modal')

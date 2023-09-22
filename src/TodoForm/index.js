@@ -12,12 +12,9 @@ function TodoForm() {
     const [newTodoValue, setNewTodoValue] = React.useState('');
     const [repeatedElement, setRepeatedElement] = React.useState(null);
 
-    //repeated element
-
     const onSubmit = (e)=>{
         e.preventDefault();
         if (newTodoValue === ""){
-            console.log("borrar");
             return;
         }
 

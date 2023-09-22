@@ -47,17 +47,3 @@ function useLocalStorage(itemName, initialValue){
     }
 
     export { useLocalStorage };
-
-    /* localStorage.removeItem('TODOS_V1');
-
-const defaultTodos = [
-    {text: 'Cortar cebolla', completed: false},
-    {text: 'LALA', completed: false},
-    {text: 'Conseguir un trabajo que paguen más', completed: false},
-    {text: 'Tener ingresos pasivos', completed: false},
-    {text: 'Aumentar mis ingresos pasivos', completed: false},
-    {text: 'Aprender a cantar y bailar', completed: false},
-    {text: 'Aprender a cantar y baiLAr LA', completed: false},
-] 
-
-localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));  */
